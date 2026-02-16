@@ -3,23 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <title>Accesso Telegram</title>
-
 <style>
-body { font-family: Arial, sans-serif; text-align:center; padding-top:50px; }
-.btn { padding: 15px 30px; background:#22c55e; color:white; text-decoration:none; border-radius:10px; font-weight:bold; }
+  html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    font-family: Arial, sans-serif;
+  }
+  .btn { 
+    padding: 20px 40px; 
+    background: #22c55e; 
+    color: white; 
+    text-decoration: none; 
+    border-radius: 12px; 
+    font-weight: bold; 
+    font-size: 20px;
+    display: inline-block;
+  }
 </style>
-
 </head>
 <body>
 
-<h2>Accesso al canale Telegram</h2>
-<p>Stai per essere reindirizzato al partner <strong>partnerd</strong></p>
-
+<!-- SOLO IL PULSANTE È VISIBILE -->
 <a class="btn" href="#" id="goTelegram">ENTRA ORA SU TELEGRAM</a>
-
-<p style="margin-top:15px; font-size:12px; opacity:0.7;">
-Se non vieni reindirizzato automaticamente, clicca il pulsante.
-</p>
 
 <script>
 // LINK TELEGRAM
@@ -31,19 +40,19 @@ const sheetId = "1ML-GjIT8Tt65YY5jl28stv1PS_pz_1Yk4fAlsRh3zoU"; // esempio: 1AbC
 document.getElementById("goTelegram").addEventListener("click", function(e){
     e.preventDefault();
 
-    // Ottieni data ora
+    // Ottieni data e ora
     const now = new Date().toISOString();
 
     // Partner
     const partner = "partnerd";
 
-    // URL per aggiungere riga via Google Sheet API
+    // URL Web App Google Script per registrare click
     const url = `https://script.google.com/macros/s/AKfycbybXumZXJknThJpp12B9Ot4iTRajpacukdNyuzSRH4_zuowAEkmtQS17m4fjfhQELDN/exec?date=${encodeURIComponent(now)}&partner=${partner}&click=1`;
 
-    // Invio dati (senza bloccare redirect)
-    fetch(url).catch(err=>console.log("Errore invio click:", err));
+    // Invia dati (non blocca redirect)
+    fetch(url).catch(err => console.log("Errore invio click:", err));
 
-    // Redirect
+    // Redirect verso Telegram
     window.location.href = telegramLink;
 });
 </script>
