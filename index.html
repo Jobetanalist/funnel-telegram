@@ -34,23 +34,20 @@
 // LINK TELEGRAM
 const telegramLink = "https://t.me/+9pE2cujqkfwyODc0";
 
-// GOOGLE SHEET ID
-const sheetId = "1ML-GjIT8Tt65YY5jl28stv1PS_pz_1Yk4fAlsRh3zoU"; // esempio: 1AbCdEfGhIjKlMnOpQrStUvWxYz
+// GOOGLE SHEET ID (non serve in HTML, ma puoi tenerlo per riferimento)
+const sheetId = "1ML-GjIT8Tt65YY5jl28stv1PS_pz_1Yk4fAlsRh3zoU";
 
+// Al click sul pulsante
 document.getElementById("goTelegram").addEventListener("click", function(e){
     e.preventDefault();
-
-    // Ottieni data e ora
-    const now = new Date().toISOString();
 
     // Partner
     const partner = "partnerd";
 
     // URL Web App Google Script per registrare click
-    const url = `https://script.google.com/macros/s/AKfycbz6OWqcW4PBH8DgKK4XJz4tD_RFNxnZ5tFFDQh9Yi9PIgH6DViXf_4GHKTqZ9uVWBJ3/exec?partner=${partnerd}&click=1`;
+    const url = `https://script.google.com/macros/s/AKfycbz6OWqcW4PBH8DgKK4XJz4tD_RFNxnZ5tFFDQh9Yi9PIgH6DViXf_4GHKTqZ9uVWBJ3/exec?partner=${partner}&click=1`;
 
-
-    // Invia dati (non blocca redirect)
+    // Invia dati allo script (non blocca redirect)
     fetch(url).catch(err => console.log("Errore invio click:", err));
 
     // Redirect verso Telegram
@@ -60,3 +57,4 @@ document.getElementById("goTelegram").addEventListener("click", function(e){
 
 </body>
 </html>
+
