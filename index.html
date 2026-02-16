@@ -26,7 +26,7 @@ Se non vieni reindirizzato automaticamente, clicca il pulsante.
 const telegramLink = "https://t.me/+9pE2cujqkfwyODc0";
 
 // GOOGLE SHEET ID
-const sheetId = "METTI_QUI_L_ID_DEL_FOGLIO"; // esempio: 1AbCdEfGhIjKlMnOpQrStUvWxYz
+const sheetId = "1ML-GjIT8Tt65YY5jl28stv1PS_pz_1Yk4fAlsRh3zoU"; // esempio: 1AbCdEfGhIjKlMnOpQrStUvWxYz
 
 document.getElementById("goTelegram").addEventListener("click", function(e){
     e.preventDefault();
@@ -38,7 +38,7 @@ document.getElementById("goTelegram").addEventListener("click", function(e){
     const partner = "partnerd";
 
     // URL per aggiungere riga via Google Sheet API
-    const url = `https://script.google.com/macros/s/YOUR_WEB_APP_ID/exec?date=${encodeURIComponent(now)}&partner=${partner}&click=1`;
+    const url = `https://script.google.com/macros/s/AKfycbybXumZXJknThJpp12B9Ot4iTRajpacukdNyuzSRH4_zuowAEkmtQS17m4fjfhQELDN/exec?date=${encodeURIComponent(now)}&partner=${partner}&click=1`;
 
     // Invio dati (senza bloccare redirect)
     fetch(url).catch(err=>console.log("Errore invio click:", err));
