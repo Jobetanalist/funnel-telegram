@@ -47,7 +47,7 @@ document.getElementById("goTelegram").addEventListener("click", function(e){
     const partner = "partnerd";
 
     // URL Web App Google Script per registrare click
-    const url = `https://script.google.com/macros/s/AKfycbz6OWqcW4PBH8DgKK4XJz4tD_RFNxnZ5tFFDQh9Yi9PIgH6DViXf_4GHKTqZ9uVWBJ3/exec${encodeURIComponent(now)}&partner=${partner}&click=1`;
+    const url = `https://script.google.com/macros/s/AKfycbz6OWqcW4PBH8DgKK4XJz4tD_RFNxnZ5tFFDQh9Yi9PIgH6DViXf_4GHKTqZ9uVWBJ3/exec?date=${encodeURIComponent(now)}&partner=${partner}&click=1`;
 
     // Invia dati (non blocca redirect)
     fetch(url).catch(err => console.log("Errore invio click:", err));
